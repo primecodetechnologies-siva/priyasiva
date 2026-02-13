@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Forever, Priya 💖</title>
+
+<style>
+/* -------------------- Background & Body -------------------- */
+body{
+    overflow-y:auto;
+    margin:0;
+    padding:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom,#0a0a0a,#1a1a1a);
+    color:white;
+    text-align:center;
+    min-height:100vh;
+    position:relative;
+}
+
+/* -------------------- Video Background -------------------- */
+#bg-video{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-1;
+    opacity:0.4;
+}
+
+/* -------------------- Floating Hearts & Stars -------------------- */
+.heart-float, .star-float{
+    position: fixed;
+    animation-timing-function: linear;
+    opacity:0.8;
+    pointer-events: none;
+}
+
+.heart-float{
+    color:#ff4b6e;
+}
+
+.star-float{
+    color:#fff;
+    font-size:5px;
+    opacity:0.6;
+}
+
+/* -------------------- Glow Title -------------------- */
+h1{
+    font-size:3em;
+    margin-top:80px;
+    text-shadow:0 0 10px #fff,0 0 20px #ff4b6e,0 0 40px #ff4b6e;
+}
+
+/* -------------------- Message -------------------- */
+p{
+    font-size:1.5em;
+    margin:20px 0;
+    color:#ffd1dc;
+}
+
+/* -------------------- Couples Animation -------------------- */
+/* -------------------- Couples Animation -------------------- */
+.couple-container{
+    position:relative;
+    height:200px;
+    margin:50px auto;
+}
+
+.couple{
+    font-size:50px;
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    transition: all 3s ease-in-out;
+}
+
+/* Female left */
+.couple-left{
+    left:-100px;
+}
+
+/* Male right */
+.couple-right{
+    right:-100px;
+}
+
+/* When active, meet in center */
+.couple-container.active .couple-left{
+    left:40%;
+}
+
+.couple-container.active .couple-right{
+    right:40%;
+}
+
+/* Ring emoji in center */
+.ring{
+    font-size:40px;
+    opacity:0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.couple-container.active .ring{
+    opacity:1;
+}
+
+/* -------------------- Button Glow -------------------- */
+.btn{
+    display:inline-block;
+    margin-top:40px;
+    margin-bottom:50px;
+    padding:15px 40px;
+    background:#ff4b6e;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:50px;
+    box-shadow:0 0 20px #ff4b6e,0 0 40px #ff4b6e inset;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 30px #ff4b6e,0 0 60px #ff4b6e inset;
+}
+/* -------------------- Responsive -------------------- */
+@media screen and (max-width:768px){
+    .glow { font-size:2em; margin-top:40px; }
+    .journey { padding:20px; font-size:1em; }
+    .btn { padding:12px 30px; font-size:1em; }
+    .moon-couple { top:20px; right:20px; }
+    .couple { font-size:30px; }
+}
+
+@media screen and (max-width:480px){
+    .glow { font-size:1.5em; margin-top:30px; }
+    .journey { padding:15px; font-size:0.95em; }
+    .btn { padding:10px 25px; font-size:0.9em; }
+    .moon { width:80px; height:80px; box-shadow:0 0 40px 10px #fff; }
+    .couple { font-size:24px; bottom:-15px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Background Video -->
+<video id="bg-video" autoplay muted loop>
+    <source src="video/love.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<!-- Floating Hearts & Stars -->
+<script>
+</script>
+
+<div class="container">
+<div class="heart">❤️</div>
+
+<h1>Will You Be Mine Forever, Priya?</h1>
+<p>You + Me = Always 💍</p>
+
+<!-- Couples Animation -->
+
+<!-- Couples Animation -->
+<div class="couple-container" id="couples">
+    <div class="couple couple-left">👩</div> <!-- Female -->
+    <div class="couple couple-right">👨</div> <!-- Male -->
+    <div class="ring">💍</div>
+</div>
+
+<a href="index.html" class="btn">See Again</a>
+</div>
+
+<script>
+// Animate couples after page load
+window.addEventListener('load', ()=>{
+    setTimeout(()=>{
+        document.getElementById('couples').classList.add('active');
+    }, 1000); // start after 1s
+});
+</script>
+
+</body>
+</html>

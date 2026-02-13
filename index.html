@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For Priya ❤️</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* -------------------- Background & Body -------------------- */
+body::before {
+    content:"";
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                url('images/a11.jpg') no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0.3; /* 0 = invisible, 1 = fully visible */
+    z-index: -1; /* behind content */
+}
+
+
+
+/* -------------------- Floating Hearts & Stars -------------------- */
+.heart-float, .star-float{
+    position:absolute;
+    bottom:-50px;
+    animation-timing-function: linear;
+    opacity:0.8;
+}
+
+.heart-float{
+    color:#ff4b6e;
+}
+
+.star-float{
+    color:#fff;
+    font-size:5px;
+    opacity:0.6;
+}
+
+@keyframes floatUp{
+    0%{transform:translateY(0) scale(1); opacity:1;}
+    100%{transform:translateY(-100vh) scale(1.5); opacity:0;}
+}
+
+/* -------------------- Glow Title -------------------- */
+.glow{
+    font-size:3em;
+    margin-top:80px;
+    text-shadow:0 0 10px #fff, 0 0 20px #ff4b6e, 0 0 40px #ff4b6e;
+    animation: titleFade 2s ease-in-out forwards;
+}
+
+@keyframes titleFade{
+    from{opacity:0; transform:translateY(-20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* -------------------- Typing Text -------------------- */
+#typing{
+    font-size:1.4em;
+    border-right:3px solid white;
+    white-space:nowrap;
+    overflow:hidden;
+    width:0;
+    margin:auto;
+    animation: typing 6s steps(60,end) forwards,
+               blink .8s infinite;
+}
+
+@keyframes typing{
+    from{width:0}
+    to{width:100%}
+}
+
+@keyframes blink{
+    50%{border-color:transparent}
+}
+
+/* -------------------- Love Journey Section -------------------- */
+.journey{
+    font-size:1.2em;
+    margin:30px auto;
+    width:80%;
+    line-height:1.8em;
+    color:#ffd1dc;
+    background: rgba(12, 6, 6, 0.4); /* fallback overlay */
+    background-image: url('images/a10.jpg'); /* your background image */
+    background-size: cover;        /* cover entire journey div */
+    background-position: center;   /* center the image */
+    background-repeat: no-repeat;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 0 30px rgba(255,75,110,0.5); /* subtle glow */
+    animation: fadeIn 3s ease-in-out forwards;
+    opacity:0;
+    position: relative;
+}
+
+.journey::before{
+    content:"";
+    position:absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(0,0,0,0.5); /* overlay for readability */
+    border-radius:20px;
+    z-index:0;
+}
+
+.journey p, .journey img{
+    position: relative;
+    z-index:1;
+}
+
+.journey img{
+    max-width:150px;
+    border-radius:15px;
+    margin:10px;
+    box-shadow:0 0 15px rgba(64, 59, 60, 0.7);
+    transition: transform 0.4s;
+}
+
+.journey img:hover{
+    transform: scale(1.1) rotate(3deg);
+}
+
+/* -------------------- Button Glow -------------------- */
+.btn{
+    display:inline-block;
+    margin-top:40px;
+    padding:15px 40px;
+    background:#ff4b6e;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:50px;
+    box-shadow:0 0 20px #ff4b6e,0 0 40px #ff4b6e inset;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 30px #ff4b6e,0 0 60px #ff4b6e inset;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+/* -------------------- Responsive -------------------- */
+@media screen and (max-width:768px){
+    .glow { font-size:2em; margin-top:40px; }
+    .journey { padding:20px; font-size:1em; }
+    .btn { padding:12px 30px; font-size:1em; }
+    .moon-couple { top:20px; right:20px; }
+    .couple { font-size:30px; }
+}
+
+@media screen and (max-width:480px){
+    .glow { font-size:1.5em; margin-top:30px; }
+    .journey { padding:15px; font-size:0.95em; }
+    .btn { padding:10px 25px; font-size:0.9em; }
+    .moon { width:80px; height:80px; box-shadow:0 0 40px 10px #fff; }
+    .couple { font-size:24px; bottom:-15px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating Hearts & Stars Generator -->
+<script>
+// Hearts
+for(let i=0;i<30;i++){
+    let heart=document.createElement("div");
+    heart.className="heart-float";
+    heart.innerHTML="❤";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=(Math.random()*5+5)+"s";
+    heart.style.fontSize=(Math.random()*30+15)+"px";
+    document.body.appendChild(heart);
+}
+
+// Stars
+for(let i=0;i<50;i++){
+    let star=document.createElement("div");
+    star.className="star-float";
+    star.innerHTML="✦";
+    star.style.left=Math.random()*100+"vw";
+    star.style.animationDuration=(Math.random()*8+5)+"s";
+    star.style.fontSize=(Math.random()*5+2)+"px";
+    document.body.appendChild(star);
+}
+</script>
+
+<!-- Moon and Couple -->
+<div style="position:absolute;top:50px;right:50px;z-index:0;">
+    <!-- Moon -->
+    <div style="
+        width:120px;
+        height:120px;
+        background: radial-gradient(circle at 30% 30%, #fff, #ccc 70%, #999);
+        border-radius:50%;
+        box-shadow:0 0 60px 15px #fff;
+    "></div>
+
+    <!-- Couple Icon sitting under moon -->
+    <div style="
+        position:absolute;
+        bottom:-20px;
+        left:10px;
+        font-size:40px;
+        color:#ff4b6e;
+        text-shadow: 0 0 10px #fff;
+    ">
+        👩‍❤️‍👨
+    </div>
+</div>
+
+<!-- Extra twinkling stars around moon -->
+<script>
+for(let i=0;i<20;i++){
+    let star=document.createElement("div");
+    star.className="star-float";
+    star.innerHTML="✦";
+    star.style.left=(50 + Math.random()*80 - 40)+"vw"; // around moon area
+    star.style.top=(10 + Math.random()*50)+"vh";
+    star.style.animationDuration=(Math.random()*6+4)+"s";
+    star.style.fontSize=(Math.random()*6+2)+"px";
+    document.body.appendChild(star);
+}
+</script>
+
+<div class="container">
+<h1 class="glow">Happy Valentine's Day Priya 💖</h1>
+
+
+<div class="journey">
+<p>One day, I saw your profile in my suggestions. I sent a request, and when I saw your post, I commented, "Hi, nice." One day, you replied to a message in my inbox — that was the first message you sent me. Then, I sent some messages, and we started talking. At that time, I never thought you would become so important in my life.</p>
+
+<p>Suddenly, life took a turn — I even came to the Maldives for work as a surprise.</p>
+
+<p>On December 17th, we video-called for the first time and talked. We talked again the next day and the third day. On the fourth day, you didn’t call me — that was the first time I realized I missed you. On the fifth day, you called again, but I didn’t reply. The next morning, you called me and asked why I hadn’t messaged you last night.</p>
+
+<p>The next day, you told me that you had some health issues. You said you were going to India, and once you reached there, our conversations started growing day by day. Without realizing it, I began to love you — and you told me you loved me too.</p>
+
+<p>The night you cried on the very first day before returning to Kuwait, that’s when I realized how much you love me.</p>
+
+<p>After you returned to Kuwait, distance came between us. Now, almost three months into our journey, we have faced many problems and struggles in our lives. There’s only one thing I realize: without you, I can’t live. Decide today what you want, because I can’t live without you.</p>
+
+<!-- Love images -->
+
+</div>
+
+<a href="gallery.html" class="btn">You ➜</a>
+</div>
+</body>
+</html>
